@@ -97,6 +97,9 @@ comando:
 ## creo un model per popolare la tabella
 - php artisan make:model House
 
+## aggiungo un seeder
+- php artisan make:seeder TablenameTableSeeder in PacalCase
+
 
 
 
