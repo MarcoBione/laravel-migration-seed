@@ -86,6 +86,10 @@ git push -u origin main
 - creo database da phpmyadmin
 - aggiungo configurazione a file .env
 
+## creata migration
+comando:
+- php artisan make:migration create_houses_table
+
 
 
 ### Premium Partners
