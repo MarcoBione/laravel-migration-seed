@@ -94,6 +94,9 @@ git push -u origin main
 comando:
 - php artisan make:migration create_houses_table
 
+## creo un model per popolare la tabella
+- php artisan make:model House
+
 
 
 
