@@ -81,6 +81,11 @@ git push -u origin main
 
 ```
 
+## creo migration e seeder
+
+- creo database da phpmyadmin
+- aggiungo configurazione a file .env
+
 
 
 ### Premium Partners
