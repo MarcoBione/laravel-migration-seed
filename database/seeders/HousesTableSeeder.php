@@ -36,17 +36,17 @@ class HousesTableSeeder extends Seeder
             //$newHouse->address= $house['address'];
 
             //.. per il faker
-            $newHouse->title= '';
-            $newHouse->address= '';
-            $newHouse->postal_code= '';
-            $newHouse->city= '';
-            $newHouse->state= '';
-            $newHouse->square_meters= '';
-            $newHouse->rooms= '';
-            $newHouse->bathroom= '';
-            $newHouse->garage= '';
-            $newHouse->price= '';
-            $newHouse->description= '';
+            $newHouse->title= $faker->words(5, true); //stringa di 5 parole mettendo ',true'
+            $newHouse->address= $faker->address();
+            $newHouse->postal_code= $faker->postcode();
+            $newHouse->city= $faker->city();
+            $newHouse->state= $faker->state();
+            $newHouse->square_meters= $faker->numberBetween(40,500);
+            $newHouse->rooms= $faker->randomDigitNotNull();
+            $newHouse->bathroom= $faker->randomDigitNotNull();
+            $newHouse->garage= $faker->randomDigitNotNull();
+            $newHouse->price= $faker->randomFloat(1, 20000, 300000); //un numero tra 20k e 300k
+            $newHouse->description= $faker->paragraph();
 
 
             $newHouse->save();

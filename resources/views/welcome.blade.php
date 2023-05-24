@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
 @section('maincontent')
-    <h1>prova</h1>
+    <main>
+        <h1>mainpage</h1>
+        <ul>
+            @foreach ($houses as $house)
+                <li>{{ $house->title }}</li>
+            @endforeach
+        </ul>
+    </main>
 @endsection
