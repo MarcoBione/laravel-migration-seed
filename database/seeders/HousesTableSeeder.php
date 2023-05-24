@@ -15,6 +15,18 @@ class HousesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $data = [
+            //dati per ogni casa
+            [
+                'title'=>'titolo',
+                'address'=>'address',
+
+            ],
+            [
+                'title'=>'titolo',
+                'address'=>'address',
+
+            ]
+            ];
     }
 }
