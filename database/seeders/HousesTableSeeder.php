@@ -29,11 +29,26 @@ class HousesTableSeeder extends Seeder
 
             ]
         ];
-        foreach($data as $house){
+        for($i=0; $i < 50; $i++){
+
             $newHouse = new House(); //invoco il model
-            $newHouse->title= $house['title']; //popolo i campi
-            $newHouse->address= $house['address'];
-            //..
+            //$newHouse->title= $house['title']; //popolo i campi
+            //$newHouse->address= $house['address'];
+
+            //.. per il faker
+            $newHouse->title= '';
+            $newHouse->address= '';
+            $newHouse->postal_code= '';
+            $newHouse->city= '';
+            $newHouse->state= '';
+            $newHouse->square_meters= '';
+            $newHouse->rooms= '';
+            $newHouse->bathroom= '';
+            $newHouse->garage= '';
+            $newHouse->price= '';
+            $newHouse->description= '';
+
+
             $newHouse->save();
         }
     }
