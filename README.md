@@ -63,6 +63,10 @@ $fa-font-path: "../fonts/webfonts" !default;
 npm run dev
 php artisan serve
 
+#installiamo per la modifica dei campi nel DB il pacchetto doctrine/dbal:
+- composer require dectrine/dbal
+
+
 ```
 
 #publicare su Github
@@ -89,6 +93,7 @@ git push -u origin main
 ## creata migration
 comando:
 - php artisan make:migration create_houses_table
+
 
 
 
