@@ -71,6 +71,14 @@ php artisan serve
 #create project on github and follow instruction
 #add composer.lock and package.json to .gitignore
 
+commands:
+git init
+git add .
+git commit -m "scaffolding"
+git branch -M main
+git remote add origin your_git_url
+git push -u origin main
+
 ```
 
 
