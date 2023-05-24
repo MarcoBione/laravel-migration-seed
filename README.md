@@ -2,7 +2,7 @@
 
 ## Preparazione file
 
-```
+```php
 
 #apriamo la cartella parent
 cd your parent_folder_path
@@ -71,11 +71,11 @@ php artisan serve
 
 #publicare su Github
 
-```
+```php
 #create project on github and follow instruction
 #add composer.lock and package.json to .gitignore
 
-commands:
+#commands:
 git init
 git add .
 git commit -m "scaffolding"
@@ -91,18 +91,81 @@ git push -u origin main
 - aggiungo configurazione a file .env
 
 ## creata migration
-comando:
-- php artisan make:migration create_houses_table
 
+```php
+#comando:
+- php artisan make:migration create_nometabella_table
+
+#dentro il file migration:
+- definisco una funzione up()
+
+    es:
+    public function up() //modifica
+    {
+        Schema::create('houses', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('address',100);
+            $table->string('postal_code',10);
+            $table->string('city',50);
+            $table->string('state',50);
+            $table->smallInteger('square_meters')->unsigned();
+            $table->tinyInteger('rooms')->unsigned();
+            $table->tinyInteger('bathroom')->unsigned();
+            $table->boolean('garage')->default(0);
+            $table->float('price',10,2);
+            $table->timestamps();
+        });
+    }
+
+
+- definisco una funzione down()
+
+    es:
+    public function down() //torna indietro con migrate:rollback
+    {
+        Schema::dropIfExists('houses');
+    }
+
+#per lanciare la migration:
+- php artisan migration
+
+#controllo su phpmyadmin
+
+```
 ## creo un model per popolare la tabella
-- php artisan make:model House
-
+```php
+- php artisan make:model Nometabellasingolare
+```
 ## aggiungo un seeder
-- php artisan make:seeder TablenameTableSeeder in PacalCase
+```php
+- php artisan make:seeder NometabellaTableSeeder 'in PacalCase'
 
+#apro il seeder e all'interno trovo la funzione run()
 
+es:
+$newHouse = new House(); //invoco il model
+//$newHouse->title= $house['title']; //popolo i campi
+//$newHouse->address= $house['address'
+//.. per il faker
+$newHouse->title= $faker->words(5, true); //stringa 5 parole mettendo ',true'
+$newHouse->address= $faker->address();
+$newHouse->postal_code= $faker->postcode();
+$newHouse->city= $faker->city();
+$newHouse->state= $faker->state();
+$newHouse->square_meters= $faker->numberBetween(40,500);
+$newHouse->rooms= $faker->randomDigitNotNull();
+$newHouse->bathroom= $faker->randomDigitNotNull();
+$newHouse->garage= $faker->randomDigitNotNull();
+$newHouse->price= $faker->randomFloat(1, 2000300000); //un numero tra 20k e 300k
+$newHouse->description= $faker->paragraph();
+$newHouse->save();
 
+#controllo phpmyadmin per verificare che i dati sono stati inseriti correttamente
 
+#creo successivamente il controller e correggo il file route per la rotta.. dopo stampo la pagina con le view
+
+```
 ### Premium Partners
 
 - **[Vehikl](https://vehikl.com/)**

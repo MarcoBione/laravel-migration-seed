@@ -16,6 +16,14 @@ class HousesTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+
+        //con json
+        //$houses = file_get_contents('data.json');
+        //$houses = json_decode($houses,true);
+
+        //con array php in config
+        //$houses = config('nomefile');
+
         $data = [
             //dati per ogni casa
             [
