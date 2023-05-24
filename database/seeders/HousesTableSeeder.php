@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Fake\Generator as Faker;
+use Faker\Generator as Faker;
 use App\Models\House;
 
 class HousesTableSeeder extends Seeder
@@ -14,7 +14,7 @@ class HousesTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         $data = [
             //dati per ogni casa
